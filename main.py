@@ -124,7 +124,15 @@ def main():
                 print(a)
                 game_turns += 1
 
-        if game_turns == 8:
+        if any(check(board.matrix)):
+            if (game_turns - 1) % 2 == 0:
+                print(f"you win {player1.name}")
+            else:
+                print(f"you win {player2.name}")
+
+            flag = False
+
+        elif game_turns == 8:
             print("game is over")
             flag = False
 
